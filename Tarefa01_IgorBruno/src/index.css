@@ -1,0 +1,152 @@
+:root {
+  --light-bg: #f0f0f0;
+  --light-text: #333;
+  --light-card: #fff;
+  --dark-bg: #1a1a2e;
+  --dark-text: #e6e6e6;
+  --dark-card: #16213e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app.light {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+.app.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Estilos da Galeria */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.card {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.app.light .card {
+  background-color: var(--light-card);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.app.dark .card {
+  background-color: var(--dark-card);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-imagem {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-nome {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Estilos dos Detalhes */
+.detalhes {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.app.light .detalhes {
+  background-color: var(--light-card);
+}
+
+.app.dark .detalhes {
+  background-color: var(--dark-card);
+}
+
+.detalhes-imagem {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.botao-voltar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.app.light .botao-voltar {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.app.dark .botao-voltar {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+/* Botão de Tema */
+.botao-tema {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.app.light .botao-tema {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.app.dark .botao-tema {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+@media (max-width: 768px) {
+  .galeria {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .detalhes {
+    padding: 1.5rem;
+  }
+}
